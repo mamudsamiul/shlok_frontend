@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ToastContainer,toast } from 'react-toastify';
-import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import { BrowserRouter as Router,Route,Routes,Outlet} from 'react-router-dom';
 import Header from "../component/Header"
 import Menus from '../component/Menus'
 import MyCalendar from '../component/MyCalendar';
@@ -19,7 +19,18 @@ function MainPage(){
         <div>
 
       <ToastContainer/>
-      
+      <Container>
+        <Header/>
+        <Row>
+          <Col md={4}>
+            <Menus/>
+          </Col>
+          <Col md={8}>
+            <Outlet/>
+          </Col>
+        </Row>
+      </Container>
+
         </div>
         
     );

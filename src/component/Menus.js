@@ -6,19 +6,19 @@ function Menus(){
 
     return (
             <ListGroup>
-    <Link color="success" className="list-group-item list-group-item-action" tag="a" to="/main/home" action>
+    <Link color="success" className="list-group-item list-group-item-action" tag="a" to="home" action>
         Home Page
     </Link>
-    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="/main/calender" action>
+    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="calender" action>
         Past Absences/ Tradies
     </Link>
-    <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="/main/notice" action>
+    <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="notice" action>
         Notice Board
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="/main/calendar" action>
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="calendar" action>
         Calender
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="/main/beta" action>
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="beta" action>
         Apply For Leave
     </Link>
     </ListGroup>

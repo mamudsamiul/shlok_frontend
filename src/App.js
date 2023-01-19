@@ -12,29 +12,23 @@ import LandPage from './component/LandPage';
 import MyCalendar from './component/MyCalendar';
 import NoticeBoard from './component/NoticeBoard';
 import MainPage from './component/MainPage';
+import LoginPage from './component/LoginPage';
+import Login from './component/Login'
 
 function App() {
   return (
     <div>
-      <Container>
-        <Router>
-        <Header/>
-        <Row>
-          <Col md={4}>
-            <Menus/>
-          </Col>
-          <Col md={8}>
-            <Routes>
-            
-            <Route path='/main/home' element={<Home/>}/>
-            <Route path='/main/calendar' element={<MyCalendar/>}/>
-            <Route path='/main/notice' element={<NoticeBoard/>}/>
-            </Routes>   
-          </Col>
-        </Row>
-        </Router>
-      </Container>
-
+      <Router>
+          <Routes>
+          <Route path='/' element={<LandPage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='main' element={<MainPage/>}>
+            <Route path='home' element={<Home/>}/>
+            <Route path='calendar' element={<MyCalendar/>}/>
+            <Route path='notice' element={<NoticeBoard/>}/>
+          </Route>
+          </Routes>
+      </Router>
 
         </div>
   );
