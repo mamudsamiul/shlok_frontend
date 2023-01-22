@@ -14,7 +14,7 @@ function Home(){
             (response)=>{
                 console.log(response)
             },
-            (error)=>{
+            (error)=>{  
                 console.log(error)
             }
         )

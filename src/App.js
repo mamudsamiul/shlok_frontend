@@ -14,6 +14,8 @@ import NoticeBoard from './component/NoticeBoard';
 import MainPage from './component/MainPage';
 import LoginPage from './component/LoginPage';
 import Login from './component/Login'
+import AdminPage from './component/AdminPage';
+import LoginSecurityPage from './component/LoginSecurityPage';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Routes>
           <Route path='/' element={<LandPage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/admin' element={<AdminPage/>}/>
+          <Route path='/securitylogin' element={<LoginSecurityPage/>}/>
           <Route path='main' element={<MainPage/>}>
             <Route path='home' element={<Home/>}/>
             <Route path='calendar' element={<MyCalendar/>}/>

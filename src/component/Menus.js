@@ -2,7 +2,10 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { ListGroup} from "reactstrap";
 import { Link } from "react-router-dom";
-function Menus(){
+function Menus(props){
+
+    console.log("Inside Menu")
+    console.log(props.data.state)
 
     return (
             <ListGroup>

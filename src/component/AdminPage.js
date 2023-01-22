@@ -7,26 +7,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ToastContainer,toast } from 'react-toastify';
 import { BrowserRouter as Router,Route,Routes,Outlet} from 'react-router-dom';
-import { useLocation } from "react-router-dom";
-import EmployeeHeader from "../component/EmployeeHeader"
+import AdminHeader from "../component/AdminHeader"
 import Menus from '../component/Menus'
 import MyCalendar from '../component/MyCalendar';
 import NoticeBoard from '../component/NoticeBoard';
 import Home from '../component/Home';
+import AdminMenu from "./AdminMenu";
 
-function MainPage(){
-  const location=useLocation();
-  console.log(location)
+function AdminPage(){
 
     return (
         <div>
 
       <ToastContainer/>
       <Container>
-        <EmployeeHeader/>
+        <AdminHeader/>
         <Row>
           <Col md={4}>
-            <Menus data={location}/>
+            <AdminMenu/>
           </Col>
           <Col md={8}>
             <Outlet/>
@@ -38,4 +36,4 @@ function MainPage(){
         
     );
 }
-export default MainPage;
+export default AdminPage;

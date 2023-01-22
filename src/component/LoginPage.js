@@ -11,6 +11,7 @@ import MainPage from "./MainPage";
 import Header from "../component/Header"
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
+import { ToastContainer } from "react-toastify";
 
 function LoginPage(){
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ function LoginPage(){
         };
     return (
         <div>
+          <ToastContainer/>
             <Container>
             <Header/>
         <Row>
