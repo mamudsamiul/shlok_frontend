@@ -24,9 +24,11 @@ function Login(){
 //function to call server
 const getDetails=(e)=>{
   e.preventDefault();
-    axios.post(`${base_url}/employee_tracker/api/login${security_url}`,{securityCode:password,}).then(
+    axios.post(`${base_url}/employee_tracker/api/login?isSecurityPortal=false`,{securityCode:password,}).then(
         (response)=>{
+          console.log("response is: ")
             console.log(response.data)
+            
             if(response.data.status==200){
               toast.success('Success', {
                 position: "top-right",
@@ -40,6 +42,10 @@ const getDetails=(e)=>{
                 });
               if(response.data.data.employee.admin==false){
                 console.log("Employee Portal");
+                localStorage.setItem('token', response.data.data.accessToken);
+                localStorage.setItem('eId', response.data.data.employee.id);
+                localStorage.setItem('firstName', response.data.data.employee.firstName);
+                localStorage.setItem('lastName', response.data.data.employee.lastName);
                 
                 navigate("/main",{
                   state:{

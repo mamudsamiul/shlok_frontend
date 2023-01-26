@@ -1,14 +1,21 @@
-import React from "react"; 
+import React,{ useEffect } from "react"; 
 import { Button } from "react-bootstrap";
 import { ListGroup} from "reactstrap";
 import { Link } from "react-router-dom";
-function Menus(props){
 
-    console.log("Inside Menu")
-    console.log(props.data.state)
+import { useLocation } from "react-router-dom";
+function Menus(props){
+    useEffect(() => {
+        console.log("Inside Menu")
+        console.log(localStorage.getItem('eId'))
+        
+      });
+
+    const location = useLocation();
+
 
     return (
-            <ListGroup>
+    <ListGroup>
     <Link color="success" className="list-group-item list-group-item-action" tag="a" to="home" action>
         Home Page
     </Link>

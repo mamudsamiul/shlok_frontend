@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; 
+import React, { useEffect ,useState} from "react"; 
 import { Button } from "react-bootstrap";
 import base_url from "../api/springapi";
 import axios from "axios"
@@ -15,9 +15,7 @@ import NoticeBoard from '../component/NoticeBoard';
 import Home from '../component/Home';
 
 function MainPage(){
-  const location=useLocation();
-  console.log(location)
-
+  
     return (
         <div>
 
@@ -26,7 +24,7 @@ function MainPage(){
         <EmployeeHeader/>
         <Row>
           <Col md={4}>
-            <Menus data={location}/>
+            <Menus/>
           </Col>
           <Col md={8}>
             <Outlet/>
