@@ -6,19 +6,19 @@ function AdminMenu(){
 
     return (
             <ListGroup>
-    <Link color="success" className="list-group-item list-group-item-action" tag="a" to="/home" action>
+    <Link color="success" className="list-group-item list-group-item-action" tag="a" to="admindetails" action>
         Details
     </Link>
-    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="/calender" action>
+    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="search" action>
         Employee Search
     </Link>
-    <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="/all-user" action>
+    <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="setnotice" action>
         Notice Board
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="/data" action>
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="usecalendar" action>
         Calender
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="/beta" action>
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="leaveapprove" action>
         Leave Application
     </Link>
     </ListGroup>

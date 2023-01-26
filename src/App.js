@@ -16,21 +16,28 @@ import LoginPage from './component/LoginPage';
 import Login from './component/Login'
 import AdminPage from './component/AdminPage';
 import LoginSecurityPage from './component/LoginSecurityPage';
+import SetNotice from './component/SetNotice';
 
 function App() {
   return (
     <div>
+      <ToastContainer/>
       <Router>
           <Routes>
           <Route path='/' element={<LandPage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/admin' element={<AdminPage/>}/>
+          <Route path='admin' element={<AdminPage/>}>
+            <Route path='admindetails' element={<Home/>}/>
+            <Route path='search' element={<MyCalendar/>}/>
+            <Route path='setnotice' element={<SetNotice/>}/>
+          </Route>
           <Route path='/securitylogin' element={<LoginSecurityPage/>}/>
           <Route path='main' element={<MainPage/>}>
             <Route path='home' element={<Home/>}/>
             <Route path='calendar' element={<MyCalendar/>}/>
             <Route path='notice' element={<NoticeBoard/>}/>
           </Route>
+
           </Routes>
       </Router>
 

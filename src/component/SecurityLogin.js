@@ -23,11 +23,12 @@ function SecurityLogin(){
 //function to call server
 const getDetails=(e)=>{
   e.preventDefault();
-    axios.post(`${base_url}/employee_tracker/api/login:security=true`,{securityCode:password,}).then(
+  console.log(password)
+    axios.post(`${base_url}/employee_tracker/api/login?isSecurityPortal=true`,{securityCode:password,}).then(
         (response)=>{
             console.log(response.data)
             if(response.data.status==200){
-                toast.success('🦄 Wow so easy!', {
+                toast.success('You Record Added!', {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -37,6 +38,8 @@ const getDetails=(e)=>{
                     progress: undefined,
                     theme: "colored",
                     });
+                    setpassword("")
+                   
             }
         },
         (error)=>{
@@ -61,6 +64,7 @@ const getDetails=(e)=>{
 const handlePassword = (e) => {
   e.preventDefault();
 setpassword(e.target.value)
+console.log(password)
   }
    
   

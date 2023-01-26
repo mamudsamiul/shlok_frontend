@@ -57,6 +57,10 @@ const getDetails=(e)=>{
               else{
                
                 console.log("Admin Portal");
+                localStorage.setItem('admintoken', response.data.data.accessToken);
+                localStorage.setItem('adminId', response.data.data.employee.id);
+                localStorage.setItem('adminfirstName', response.data.data.employee.firstName);
+                localStorage.setItem('adminlastName', response.data.data.employee.lastName);
                 navigate("/admin");
 
               }
