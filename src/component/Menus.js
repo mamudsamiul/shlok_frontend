@@ -19,7 +19,7 @@ function Menus(props){
     <Link color="success" className="list-group-item list-group-item-action" tag="a" to="home" action>
         Home Page
     </Link>
-    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="calender" action>
+    <Link color="info" className="list-group-item list-group-item-action" tag="a" to="tradies" action>
         Past Absences/ Tradies
     </Link>
     <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="notice" action>
@@ -28,7 +28,7 @@ function Menus(props){
     <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="calendar" action>
         Calender
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="beta" action>
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="leave" action>
         Apply For Leave
     </Link>
     </ListGroup>

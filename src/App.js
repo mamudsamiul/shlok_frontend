@@ -17,6 +17,8 @@ import Login from './component/Login'
 import AdminPage from './component/AdminPage';
 import LoginSecurityPage from './component/LoginSecurityPage';
 import SetNotice from './component/SetNotice';
+import TradiesPage from './component/TradiesPage';
+import ApplyLeave from './component/ApplyLeave';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
             <Route path='home' element={<Home/>}/>
             <Route path='calendar' element={<MyCalendar/>}/>
             <Route path='notice' element={<NoticeBoard/>}/>
+            <Route path='tradies' element={<TradiesPage/>}/>
+            <Route path='leave' element={<ApplyLeave/>}/>
           </Route>
 
           </Routes>

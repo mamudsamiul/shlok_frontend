@@ -2,11 +2,12 @@ import React, { useEffect,useState } from "react";
 import { Button } from "react-bootstrap";
 import base_url from "../api/springapi";
 import axios from "axios"
-function NoticeBoard(){
+function TradiesPage(){
     const token=localStorage.getItem('token')
-    const [noticeDetails, setNoticeDetails] = useState([]);
+    const [tradiesDetails, setTradiesDetails] = useState([]);
+    const userId=localStorage.getItem('eId')
     useEffect(() => {
-        axios.get(`${base_url}/employee_tracker/api/notices`,
+        axios.get(`${base_url}/employee_tracker/api/employee/${userId}/attendance`,
         { 
             headers: {
             "Authorization": `${token}`
@@ -16,7 +17,8 @@ function NoticeBoard(){
             (response)=>{
               console.log("response is: ")
                 console.log(response.data.data)
-                setNoticeDetails(response.data.data);
+                setTradiesDetails(response.data.data);
+                console.log(tradiesDetails)
             },
             (error)=>{
                 console.log(error)
@@ -25,8 +27,10 @@ function NoticeBoard(){
         
       },[]);
     
-      const listItems = noticeDetails.map(
+      const listItems = tradiesDetails.map(
         (element) => {
+            console.log("ListItems")
+            console.log(tradiesDetails)
             return (
                 <table className="table">
                 <thead>
@@ -36,22 +40,37 @@ function NoticeBoard(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{element.noticeDetails}</td>
+                        <td>{element.date}</td>
+                        <td>{element.time}</td>
+                        <td>{element.remarks}</td>
                     </tr>
                 </tbody>
             </table>
             )
         }
     )
-
+    
+    
+    
+    
     return (
         <div class="container-fluid text-sm-center p-5 bg-light"> 
-        <h1 >Notice Board</h1>
+        <h1 >Tradies Board</h1>
         <p>
-            {listItems}
+        <table className="table">
+                <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Remarks</td>
+                </tr>
+                </thead>
+                </table>
+        {listItems}
+            
         </p>
 
     </div>
     );
 }
-export default NoticeBoard;
+export default TradiesPage;
