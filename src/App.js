@@ -19,6 +19,9 @@ import LoginSecurityPage from './component/LoginSecurityPage';
 import SetNotice from './component/SetNotice';
 import TradiesPage from './component/TradiesPage';
 import ApplyLeave from './component/ApplyLeave';
+import AddEmployee from './component/AddEmployee';
+import EmployeeSearch from './component/EmployeeSearch';
+import { Calendar } from 'react-calendar';
 
 function App() {
   return (
@@ -30,8 +33,11 @@ function App() {
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='admin' element={<AdminPage/>}>
             <Route path='admindetails' element={<Home/>}/>
-            <Route path='search' element={<MyCalendar/>}/>
+            <Route path='search' element={<EmployeeSearch/>}/>
             <Route path='setnotice' element={<SetNotice/>}/>
+            <Route path='usecalendar' element={<Calendar/>}/>
+            
+            <Route path='addEmployee' element={<AddEmployee/>}/>
           </Route>
           <Route path='/securitylogin' element={<LoginSecurityPage/>}/>
           <Route path='main' element={<MainPage/>}>

@@ -18,8 +18,8 @@ function AdminMenu(){
     <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="usecalendar" action>
         Calender
     </Link>
-    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="leaveapprove" action>
-        Leave Application
+    <Link color="danger" className="list-group-item list-group-item-action" tag="a" to="addemployee" action>
+        Add Employee
     </Link>
     </ListGroup>
     );
