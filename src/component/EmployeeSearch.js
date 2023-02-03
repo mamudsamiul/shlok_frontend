@@ -26,7 +26,6 @@ function EmployeeSearch(){
                     setId(response.data.data.id)
                     console.log("Response is good")
                     
-                      getDetails()
                   }
               },
               (error)=>{

@@ -6,29 +6,24 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom';
-import Home from '../component/Home';
+import Home from './Home';
 import MainPage from "./MainPage";
-import Header from "../component/Header"
+import Header from "./Header"
 import { useNavigate } from "react-router-dom";
-import LoginPage from "./LoginPage";
+import SecurityLogin from "./SecurityLogin";
+import { ToastContainer,toast } from 'react-toastify';
+import SecurityAdminLogin from "./SecurityAdminLogin";
 
-function LandPage(){
-    const navigate = useNavigate();
+
+function SecurityAdminMainPage(){
     return (
         <div>
+          <ToastContainer/>
             <Container>
             <Header/>
         <Row>
           <Col md={12}>
-          <div class="container-fluid text-sm-center p-5 bg-light"> 
-            <h1 >Welcome Minions</h1>
-            <p class="lead">Start Your Day</p>
-            <div></div>
-            <Link to="/login" style={{ marginRight: '.9rem' }} className="btn btn-primary">Employee Portal</Link>
-
-            <Link to="/securityadminlogin" style={{ marginLeft: '.9rem' }} className="btn btn-primary">Security Portal</Link>
-          
-        </div>
+          <SecurityAdminLogin/>
           </Col>
         </Row>
     
@@ -37,4 +32,4 @@ function LandPage(){
         
     );
 }
-export default LandPage;
+export default SecurityAdminMainPage;

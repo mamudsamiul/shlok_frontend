@@ -22,6 +22,8 @@ import ApplyLeave from './component/ApplyLeave';
 import AddEmployee from './component/AddEmployee';
 import EmployeeSearch from './component/EmployeeSearch';
 import { Calendar } from 'react-calendar';
+import SecurityAdminLogin from './component/SecurityAdminLogin';
+import SecurityAdminMainPage from './component/SecurityAdminMainPage';
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
             <Route path='addEmployee' element={<AddEmployee/>}/>
           </Route>
           <Route path='/securitylogin' element={<LoginSecurityPage/>}/>
+          <Route path='/securityadminlogin' element={<SecurityAdminMainPage/>}/>
           <Route path='main' element={<MainPage/>}>
             <Route path='home' element={<Home/>}/>
             <Route path='calendar' element={<MyCalendar/>}/>
