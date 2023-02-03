@@ -24,6 +24,7 @@ import EmployeeSearch from './component/EmployeeSearch';
 import { Calendar } from 'react-calendar';
 import SecurityAdminLogin from './component/SecurityAdminLogin';
 import SecurityAdminMainPage from './component/SecurityAdminMainPage';
+import AdminHome from './component/AdminHome';
 
 function App() {
   return (
@@ -34,10 +35,10 @@ function App() {
           <Route path='/' element={<LandPage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='admin' element={<AdminPage/>}>
-            <Route path='admindetails' element={<Home/>}/>
+            <Route path='admindetails' element={<AdminHome/>}/>
             <Route path='search' element={<EmployeeSearch/>}/>
             <Route path='setnotice' element={<SetNotice/>}/>
-            <Route path='usecalendar' element={<Calendar/>}/>
+            <Route path='usecalendar' element={<MyCalendar/>}/>
             
             <Route path='addEmployee' element={<AddEmployee/>}/>
           </Route>
