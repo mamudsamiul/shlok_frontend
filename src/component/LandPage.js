@@ -21,8 +21,8 @@ function LandPage(){
         <Row>
           <Col md={12}>
           <div class="container-fluid text-sm-center p-5 bg-light"> 
-            <h1 >Welcome Minions</h1>
-            <p class="lead">Start Your Day</p>
+            <h1 >Welcome Employees</h1>
+            <p class="lead"></p>
             <div></div>
             <Link to="/login" style={{ marginRight: '.9rem' }} className="btn btn-primary">Employee Portal</Link>
 

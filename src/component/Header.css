@@ -4,3 +4,14 @@
     height: 100%;
     width: 100%;
   }
+  .header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+  }

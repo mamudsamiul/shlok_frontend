@@ -10,9 +10,7 @@ function Home(props){
 
     return (
         <div class="container-fluid text-sm-center p-5 bg-light"> 
-        <h1 >Hello {name}</h1>
-        <p class="lead">A One-day Conference About All Things JavaScript!</p>
-        <Button color="primary" outline> Start </Button>
+        <h1 >Hello {name} !</h1>
     </div>
     );
 }
