@@ -7,7 +7,7 @@ function AdminMenu(){
     return (
             <ListGroup>
     <Link color="success" className="list-group-item list-group-item-action" tag="a" to="admindetails" action>
-        Details
+        Home
     </Link>
     <Link color="info" className="list-group-item list-group-item-action" tag="a" to="search" action>
         Employee Search

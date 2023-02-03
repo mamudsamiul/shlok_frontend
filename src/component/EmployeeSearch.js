@@ -19,18 +19,14 @@ function EmployeeSearch(){
                   console.log(response)
                   
                   if(response.status==200){
-
-                        setLeave(response.data.data.Leaves)
-                    
+                    setLeave(response.data.data.Leaves)
                     setTradies(response.data.data.Attendance)
                     setId(response.data.data.id)
-                    console.log("Response is good")
-                    
                   }
               },
               (error)=>{
                   console.log(error)
-                  toast.error('Login failed!', {
+                  toast.error('Search Failed!', {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -80,12 +76,12 @@ function EmployeeSearch(){
                         progress: undefined,
                         theme: "colored",
                         });
-
+                        getDetails()
                     }
                 },
                 (error)=>{
                     console.log(error)
-                    toast.error('Login failed!', {
+                    toast.error('Failed!', {
                       position: "top-right",
                       autoClose: 3000,
                       hideProgressBar: false,

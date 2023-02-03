@@ -55,7 +55,7 @@ function TradiesPage(){
     
     return (
         <div class="container-fluid text-sm-center p-5 bg-light"> 
-        <h1 >Tradies Board</h1>
+        <h1 >Tardies Board</h1>
         <p>
         <table className="table">
                 <thead>

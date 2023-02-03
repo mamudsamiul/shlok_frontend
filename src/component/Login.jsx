@@ -47,7 +47,7 @@ const getDetails=(e)=>{
                 localStorage.setItem('firstName', response.data.data.employee.firstName);
                 localStorage.setItem('lastName', response.data.data.employee.lastName);
                 
-                navigate("/main",{
+                navigate("/main/home",{
                   state:{
                     token: response.data.data
                   }
@@ -61,7 +61,7 @@ const getDetails=(e)=>{
                 localStorage.setItem('adminId', response.data.data.employee.id);
                 localStorage.setItem('adminfirstName', response.data.data.employee.firstName);
                 localStorage.setItem('adminlastName', response.data.data.employee.lastName);
-                navigate("/admin");
+                navigate("/admin/admindetails");
 
               }
             }

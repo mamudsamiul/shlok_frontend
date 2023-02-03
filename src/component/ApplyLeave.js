@@ -14,8 +14,8 @@ function ApplyLeave(){
     var endDateString=""
     const adminId=localStorage.getItem('adminId')
     const [id, setId] = useState("2");
-    const [notice, setNoticeA] = useState("Not feeling well?");
-    const [leave, setLeave] = useState("Privilage Leave");
+    const [notice, setNoticeA] = useState("Replace this description with Reason");
+    const [leave, setLeave] = useState("Sick Leave");
     
     const [start, setStart] = useState("");
     const [end, setEnd] = useState("");
@@ -28,19 +28,14 @@ function ApplyLeave(){
         console.log(localStorage.getItem('eId'))
         axios.get(`${base_url}/employee_tracker/api/employee/${userId}/leave`).then(
             (response)=>{
-              console.log("Applied Leaves: ")
-                console.log(response.data.data)
-                
+              
                 if(response.data.status==200){
                     setAllLeaves(response.data.data)
-                    
-                  
-                  
                 }
             },
             (error)=>{
                 console.log(error)
-                toast.error('Login failed!', {
+                toast.error('Failed!!', {
                   position: "top-right",
                   autoClose: 3000,
                   hideProgressBar: false,
@@ -83,9 +78,6 @@ function ApplyLeave(){
         
           axios.post(`${base_url}/employee_tracker/api/employee/${userId}/leave`,{startDate:startDateString,endDate:endDateString,type:leave,details:notice}).then(
               (response)=>{
-                console.log("response is: ")
-                  console.log(response.data)
-                  
                   if(response.data.status==200){
                     toast.success('Success', {
                       position: "top-right",
@@ -97,13 +89,13 @@ function ApplyLeave(){
                       progress: undefined,
                       theme: "colored",
                       });
-                      setLeave("Privilage Leave")
+                      setLeave("Sick Leave")
                     
                   }
               },
               (error)=>{
                   console.log(error)
-                  toast.error('Login failed!', {
+                  toast.error('Failed!', {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -120,13 +112,8 @@ function ApplyLeave(){
 
       const setDetails = (e) => {
         e.preventDefault();
-      console.log(adminId)
-      console.log(notice)
-      
       startDateString=moment(startDate).format("YYYY-MM-DD").toString()
       endDateString=moment(endDate).format("YYYY-MM-DD").toString()
-      console.log(startDateString)
-      console.log(endDateString)
       getDetails()
       
         }
@@ -137,8 +124,6 @@ function ApplyLeave(){
         }
         const handleLeaveChange = (e) => {
             e.preventDefault();
-            console.log("e value is")
-            console.log(e.target.value)
           setLeave(e.target.value)
             }
 
@@ -153,8 +138,8 @@ function ApplyLeave(){
         <label></label>
         <select value={leave} onChange={(e) => handleLeaveChange(e)}>
        <option value="Sick Leave">Sick Leave</option>
-        <option value="Personal Leave">Personal Leave</option>
-        <option value="Privilage Leave">Privilage Leave</option>
+        <option value="Vacation Leave">Vacation Leave</option>
+        <option value="Work Leave">Work Leave</option>
       </select>
         </div>
        <div className="input-container">

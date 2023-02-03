@@ -13,7 +13,7 @@ function SetNotice(){
     var endDateString=""
     const adminId=localStorage.getItem('adminId')
     const [id, setId] = useState("2");
-    const [notice, setNoticeA] = useState("Hello mice how are you?");
+    const [notice, setNoticeA] = useState("");
     const [start, setStart] = useState("");
     const [end, setEnd] = useState("");
     const [startDate, setStartDate] = useState(new Date());
