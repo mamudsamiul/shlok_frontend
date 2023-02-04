@@ -40,9 +40,9 @@ function TradiesPage(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{element.date}</td>
-                        <td>{element.time}</td>
-                        <td>{element.remarks}</td>
+                        <td align="center">{element.date}</td>
+                        <td align="center">{element.time}</td>
+                        <td align="center">{element.remarks}</td>
                     </tr>
                 </tbody>
             </table>
@@ -60,9 +60,9 @@ function TradiesPage(){
         <table className="table">
                 <thead>
                 <tr>
-                    <td>Date</td>
-                    <td>Time</td>
-                    <td>Remarks</td>
+                    <td align="center">Date</td>
+                    <td align="center">Time</td>
+                    <td align="center">Remarks</td>
                 </tr>
                 </thead>
                 </table>

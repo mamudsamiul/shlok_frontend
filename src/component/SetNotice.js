@@ -7,6 +7,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios"
 import Moment from 'react-moment';
 import moment from 'moment';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import './Login.css'
 function SetNotice(){
     const token=localStorage.getItem('token')
     var startDateString=""
@@ -86,7 +90,19 @@ function SetNotice(){
          
        </div>
        <div style={{alignItems:"left"}}>
-       <DatePicker
+       <Container>
+          <Row>
+            <Col md={6}>
+            <h6 >Start Date</h6>
+            </Col>
+            <Col md={6}>
+            <h6 >End Date</h6>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+           
+            <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
       withPortal
@@ -94,9 +110,10 @@ function SetNotice(){
       dateFormat="yyyy/MM/dd"
     />
 
-       </div>
        
-<DatePicker
+            </Col>
+            <Col md={6}>
+            <DatePicker
 placeholderText="Select End Date"
       selected={endDate}
       
@@ -105,6 +122,14 @@ placeholderText="Select End Date"
       portalId="root-portal"
       dateFormat="yyyy/MM/dd"  
     />
+            </Col>
+          </Row>
+        </Container>
+       
+
+       </div>
+       
+
     
        <div className="button-container">
          <input type="submit" />

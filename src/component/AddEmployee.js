@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios"
 import Moment from 'react-moment';
 import moment from 'moment';
+import './Login.css'
 function AddEmployee(){
     
     const [firstName, setFirstName] = useState("");
@@ -90,7 +91,9 @@ function AddEmployee(){
 
     return (
         <div class="container-fluid text-sm-center p-5 bg-light"> 
-        <h1 >Add Employee</h1>
+        <div className="app">
+      <div className="login-form">
+        <div className="title" align>Add Employee</div>
         <form onSubmit={setDetails}>
        <div className="input-container">
          <label>First Name </label>
@@ -113,7 +116,8 @@ function AddEmployee(){
          <input type="submit" />
        </div>
      </form>
-     
+     </div>
+     </div>
     </div>
     );
 }

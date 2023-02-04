@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios"
 import Moment from 'react-moment';
 import moment from 'moment';
+import './Login.css'
 function EmployeeSearch(){
     
     const [name, setName] = useState("");
@@ -140,8 +141,8 @@ function EmployeeSearch(){
                         <td>
                         <select value={leave} onChange={(e) => handleLeaveChange(e,element.id)}>
                         <option value="PENDING APPROVAL">PENDING APPROVAL</option>
-                        <option value="Reject">Reject</option>
-                            <option value="Approved">Approved</option>
+                        <option value="Rejected">Reject</option>
+                            <option value="Approved">Approve</option>
                         </select>
                         </td>
                         </tr>
@@ -164,6 +165,7 @@ function EmployeeSearch(){
        </div>
      </form>
      <hr/>
+     <h6>Tardies</h6>
      <p>
         <table className="table">
                 <thead>
@@ -178,6 +180,11 @@ function EmployeeSearch(){
         {listItems}
             
         </p>
+        <hr/>
+
+        <div className="dynamo">
+      <div className="login-form">
+        <div className="title" align>Applied Leave</div>
         <p>
         <table className="table">
                 <thead>
@@ -193,6 +200,10 @@ function EmployeeSearch(){
                 {leaveListItems}
             
         </p>
+        </div>
+        </div>
+        
+        
      
     </div>
     );

@@ -20,7 +20,7 @@ function Menus(props){
         Home Page
     </Link>
     <Link color="info" className="list-group-item list-group-item-action" tag="a" to="tradies" action>
-        Past Absences/ Tradies
+        Past Absences/ Tardies
     </Link>
     <Link color="warning" className="list-group-item list-group-item-action" tag="a" to="notice" action>
         Notice Board

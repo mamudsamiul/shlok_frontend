@@ -7,6 +7,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios"
 import Moment from 'react-moment';
 import moment from 'moment';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import './Login.css'
 function ApplyLeave(){
     const token=localStorage.getItem('token')
     const userId=localStorage.getItem('eId')
@@ -127,27 +131,57 @@ function ApplyLeave(){
           setLeave(e.target.value)
             }
 
-    return (
-        <div class="container-fluid text-sm-center p-5 bg-light"> 
+    return (<div>
+              <div class="container-fluid text-sm-center p-5 bg-light"> 
         
         <h1 >Leave Page</h1>
+        <hr/>
         
         <form onSubmit={setDetails}>
         <div>
-        <label> Select Leave type</label>
-        <label></label>
-        <select value={leave} onChange={(e) => handleLeaveChange(e)}>
+        <Container>
+        <Row>
+          <Col md={6}>
+           <h6 className="he">Choose Your Leave Type</h6>
+          </Col>
+          <Col md={6}>
+          <select value={leave} onChange={(e) => handleLeaveChange(e)} >
        <option value="Sick Leave">Sick Leave</option>
         <option value="Vacation Leave">Vacation Leave</option>
         <option value="Work Leave">Work Leave</option>
       </select>
+          </Col>
+        </Row>
+        
+      </Container>
         </div>
-       <div className="input-container">
-         <label>Leave Description </label>
+        <hr/>
+        <Container>
+          <Row>
+            <Col md={4}>
+            <h6 className="he">Description</h6>
+            </Col>
+            <Col md={8}>
+            <div className="input-container">
          <textarea value={notice} onChange={(e) => handleChange(e)} />
-         
        </div>
-       <div style={{alignItems:"left"}}>
+            </Col>
+          </Row>
+        </Container>
+        <hr/>
+
+        <Container>
+          <Row>
+            <Col md={6}>
+            <h6 >Start Date</h6>
+            </Col>
+            <Col md={6}>
+            <h6 >End Date</h6>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+           
        <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
@@ -156,9 +190,10 @@ function ApplyLeave(){
       dateFormat="yyyy/MM/dd"
     />
 
-       </div>
        
-<DatePicker
+            </Col>
+            <Col md={6}>
+            <DatePicker
 placeholderText="Select End Date"
       selected={endDate}
       
@@ -167,14 +202,24 @@ placeholderText="Select End Date"
       portalId="root-portal"
       dateFormat="yyyy/MM/dd"  
     />
-    
+            </Col>
+          </Row>
+        </Container>
+       
+      <hr/>
+       
        <div className="button-container">
          <input type="submit" />
        </div>
      </form>
      <div>
-        <hr/>
-     <table className="table">
+     </div>
+    </div>
+    <div className="leave">
+      <div className="login-form">
+        <div className="title" align>Applied Leave</div>
+
+        <table className="table">
                 <thead>
                 <tr>
                     <td>From</td>
@@ -188,9 +233,10 @@ placeholderText="Select End Date"
      <p>
             {listItems}
         </p>
-     </div>
-     
+   </div>
+   </div>
     </div>
+    
     );
 }
 export default ApplyLeave;
