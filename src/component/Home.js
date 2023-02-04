@@ -5,7 +5,7 @@ import base_url from "../api/springapi";
 import axios from "axios"
 function Home(props){
     const token= localStorage.getItem('token')
-    const name =localStorage.getItem('firstName')+ " "+localStorage.getItem('lastName')
+    const name =localStorage.getItem('firstName')
     
 
     return (

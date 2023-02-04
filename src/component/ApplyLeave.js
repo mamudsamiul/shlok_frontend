@@ -18,7 +18,7 @@ function ApplyLeave(){
     var endDateString=""
     const adminId=localStorage.getItem('adminId')
     const [id, setId] = useState("2");
-    const [notice, setNoticeA] = useState("Replace this description with Reason");
+    const [notice, setNoticeA] = useState("");
     const [leave, setLeave] = useState("Sick Leave");
     
     const [start, setStart] = useState("");
